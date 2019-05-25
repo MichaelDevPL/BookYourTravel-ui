@@ -54,10 +54,20 @@
         <!--Ticke Form-->
         <form>
           <div class="form-group mt-3">
-            <input type="text" class="form-control form-control-lg" id="fromCity" placeholder="e.g. Kraków Centralny">
+            <input type="text" class="form-control form-control-lg" list="station-list" id="fromCity" placeholder="e.g. Kraków Centralny">
+            <datalist id="station-list">
+                <select>
+                  <option *ngFor="let station of stations">{{station}}</option>
+                </select>
+            </datalist>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control form-control-lg" id="toCity" placeholder="e.g. Szczecin Główny">
+            <input type="text" class="form-control form-control-lg" list="station-list" id="toCity" placeholder="e.g. Szczecin Główny">
+            <datalist id="station-list">
+              <select>
+                <option *ngFor="let station of stations">{{station}}</option>
+              </select>
+          </datalist>
           </div>
           <div class="form-group mt-3">
             <input type="date" class="form-control form-control-lg" id="date" value="{{today}}">

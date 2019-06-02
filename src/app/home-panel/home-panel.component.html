@@ -17,8 +17,7 @@
               class="d-block" alt="Slide 1">
           </div>
           <div class="carousel-item">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/0/0a/EP2K-049_with_train%2C_Tomsk-1_station.jpg"
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/EP2K-049_with_train%2C_Tomsk-1_station.jpg"
               class="d-block" alt="Slide 2">
           </div>
           <div class="carousel-item">
@@ -54,29 +53,31 @@
         <!--Ticke Form-->
         <form>
           <div class="form-group mt-3">
-            <input type="text" class="form-control form-control-lg" list="station-list" id="fromCity" placeholder="e.g. Kraków Centralny">
-            <datalist id="station-list">
-                <select>
-                  <option *ngFor="let station of stations">{{station}}</option>
-                </select>
-            </datalist>
-          </div>
-          <div class="form-group mt-3">
-            <input type="text" class="form-control form-control-lg" list="station-list" id="toCity" placeholder="e.g. Szczecin Główny">
+            <input type="text" class="form-control form-control-lg" list="station-list" id="fromCity" [(ngModel)]="searchConnectionBetweenCity.from_City" name="fromCity"
+              placeholder="e.g. Kraków Centralny">
             <datalist id="station-list">
               <select>
                 <option *ngFor="let station of stations">{{station}}</option>
               </select>
-          </datalist>
+            </datalist>
           </div>
           <div class="form-group mt-3">
-            <input type="date" class="form-control form-control-lg" id="date" value="{{today}}">
+            <input type="text" class="form-control form-control-lg" list="station-list" id="toCity" [(ngModel)]="searchConnectionBetweenCity.to_City" name="toCity"
+              placeholder="e.g. Szczecin Główny">
+            <datalist id="station-list">
+              <select>
+                <option *ngFor="let station of stations">{{station}}</option>
+              </select>
+            </datalist>
           </div>
           <div class="form-group mt-3">
-            <input type="time" class="form-control form-control-lg" id="time" value="{{time}}">
+            <input type="date" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.date" name="date">
+          </div>
+          <div class="form-group mt-3">
+            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.time" name="time">
           </div>
           <!--Append-->
-          <button type="submit" class="btn btn-success btn-block text-uppercase">Search</button>
+          <button type="submit" (click)="connectionSearching()" class="btn btn-success btn-block text-uppercase">Search</button>
         </form>
         <!--End ticket form-->
 

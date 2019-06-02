@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataConnection } from '../shared/model/data-connection';
+import { BookingTrainService } from '../shared/services/booking-train.service';
 
 @Component({
   selector: 'app-home-panel',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePanelComponent implements OnInit {
 
-  time: string;
+  public searchConnectionBetweenCity: DataConnection = new DataConnection();
+
   stations: String[] = [
     'Gdakowo',
     'Gdańsk Główny',
@@ -47,25 +50,30 @@ export class HomePanelComponent implements OnInit {
     'Warszawa Jeziorki',
   ]
 
-  constructor() {
-    this.setNow();
+  constructor(private bookingTrain: BookingTrainService) {
+    this.searchConnectionBetweenCity.date = this.date();
+    this.searchConnectionBetweenCity.time = this.time();
   }
 
   ngOnInit() {
 
   }
-  setNow() {
+
+  public time() {
     let now = new Date();
     let hours = ("0" + now.getHours()).slice(-2);
     let minutes = ("0" + now.getMinutes()).slice(-2);
-    let str = hours + ':' + minutes;
-    this.time = str;
+    return hours + ':' + minutes;
   }
 
-  public today = (function () {
-    const now = new Date();
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const day = now.getDate().toString().padStart(2, '0');
+  public date() {
+    let now = new Date();
+    let month = (now.getMonth() + 1).toString().padStart(2, '0');
+    let day = now.getDate().toString().padStart(2, '0');
     return `${now.getFullYear()}-${month}-${day}`;
-  })();
+  }
+
+  connectionSearching(){
+    this.bookingTrain.getTrainSchedule(this.searchConnectionBetweenCity);
+  }
 }

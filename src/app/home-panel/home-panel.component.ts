@@ -51,8 +51,8 @@ export class HomePanelComponent implements OnInit {
   ]
 
   constructor(private bookingTrain: BookingTrainService) {
-    this.searchConnectionBetweenCity.date = this.date();
-    this.searchConnectionBetweenCity.time = this.time();
+    this.searchConnectionBetweenCity.arrival_date = this.date();
+    this.searchConnectionBetweenCity.arrival_time = this.time();
   }
 
   ngOnInit() {

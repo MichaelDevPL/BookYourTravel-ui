@@ -71,10 +71,10 @@
             </datalist>
           </div>
           <div class="form-group mt-3">
-            <input type="date" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.date" name="date">
+            <input type="date" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.arrival_date" name="date">
           </div>
           <div class="form-group mt-3">
-            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.time" name="time">
+            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.arrival_time" name="time">
           </div>
           <!--Append-->
           <button type="submit" (click)="connectionSearching()" class="btn btn-success btn-block text-uppercase">Search</button>

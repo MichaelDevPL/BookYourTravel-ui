@@ -5,9 +5,11 @@ import { LoginPanelComponent } from '../login-panel/login-panel.component';
 import { RegisterPanelComponent } from '../register-panel/register-panel.component';
 
 const routes: Routes = [
-  {path: '', component:HomePanelComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component:HomePanelComponent},
   {path: 'login', component:LoginPanelComponent},
-  {path: 'register', component:RegisterPanelComponent}
+  {path: 'register', component:RegisterPanelComponent},
+  {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({

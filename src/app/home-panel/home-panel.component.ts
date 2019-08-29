@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataConnection } from '../shared/model/data-connection';
+
 import { BookingTrainService } from '../shared/services/booking-train.service';
+import { SearchConnection } from '../shared/model/search-connection';
 
 @Component({
   selector: 'app-home-panel',
@@ -9,7 +10,7 @@ import { BookingTrainService } from '../shared/services/booking-train.service';
 })
 export class HomePanelComponent implements OnInit {
 
-  public searchConnectionBetweenCity: DataConnection = new DataConnection();
+  public searchConnection: SearchConnection = new SearchConnection();
 
   stations: String[] = [
     'Gdakowo',
@@ -51,8 +52,8 @@ export class HomePanelComponent implements OnInit {
   ]
 
   constructor(private bookingTrain: BookingTrainService) {
-    this.searchConnectionBetweenCity.arrival_date = this.date();
-    this.searchConnectionBetweenCity.arrival_time = this.time();
+    this.searchConnection.depart_date = this.date();
+    this.searchConnection.depart_time = this.time();
   }
 
   ngOnInit() {
@@ -74,6 +75,6 @@ export class HomePanelComponent implements OnInit {
   }
 
   connectionSearching(){
-    this.bookingTrain.getTrainSchedule(this.searchConnectionBetweenCity);
+    this.bookingTrain.getTrainSchedule(this.searchConnection);
   }
 }

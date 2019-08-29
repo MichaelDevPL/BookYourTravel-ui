@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { DataConnection } from '../model/data-connection';
+
+import { SearchConnection } from '../model/search-connection';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,8 @@ export class BookingTrainService {
 
   constructor() { }
 
-  getTrainSchedule(dataConnect: DataConnection){
+  getTrainSchedule(searchConnection: SearchConnection){
     //post these details to API server
-
-    console.log(dataConnect);
+    console.log(searchConnection);
   }
 }

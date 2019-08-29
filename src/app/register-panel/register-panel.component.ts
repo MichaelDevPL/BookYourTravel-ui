@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { User } from '../shared/model/user.model';
 
 @Component({
   selector: 'app-register-panel',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPanelComponent implements OnInit {
 
-  constructor() { }
+  public registerForm: FormGroup;
+  public userData: User = new User();
+  private submitted = false;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+        first_name: ['', Validators.required],
+        last_name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        password_confirmation: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
+  passwordMatchValidator(): boolean {
+    return this.f.password.value === this.f.password_confirmation.value
+      ? true : false;
+ }
+
+    // convenience getter for easy access to form fields
+    get f() { return this.registerForm.controls; }
+
+    submit(){
+      console.log(this.f.first_name.status)
+      console.log(this.passwordMatchValidator())
+      this.submitted = true;
+      if (!this.registerForm.invalid) {
+        return console.log(this.registerForm.value);
+      }  
+    }
 }

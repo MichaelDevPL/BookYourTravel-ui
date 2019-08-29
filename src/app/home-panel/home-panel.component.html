@@ -53,7 +53,7 @@
         <!--Ticke Form-->
         <form>
           <div class="form-group mt-3">
-            <input type="text" class="form-control form-control-lg" list="station-list" id="fromCity" [(ngModel)]="searchConnectionBetweenCity.from_City" name="fromCity"
+            <input type="text" class="form-control form-control-lg" list="station-list" id="fromCity" [(ngModel)]="searchConnection.from_City" name="fromCity"
               placeholder="e.g. Kraków Centralny">
             <datalist id="station-list">
               <select>
@@ -62,7 +62,7 @@
             </datalist>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control form-control-lg" list="station-list" id="toCity" [(ngModel)]="searchConnectionBetweenCity.to_City" name="toCity"
+            <input type="text" class="form-control form-control-lg" list="station-list" id="toCity" [(ngModel)]="searchConnection.to_City" name="toCity"
               placeholder="e.g. Szczecin Główny">
             <datalist id="station-list">
               <select>
@@ -71,10 +71,10 @@
             </datalist>
           </div>
           <div class="form-group mt-3">
-            <input type="date" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.arrival_date" name="date">
+            <input type="date" class="form-control form-control-lg" [(ngModel)]="searchConnection.depart_date" name="depart_date">
           </div>
           <div class="form-group mt-3">
-            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnectionBetweenCity.arrival_time" name="time">
+            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnection.depart_time" name="time">
           </div>
           <!--Append-->
           <button type="submit" (click)="connectionSearching()" class="btn btn-success btn-block text-uppercase">Search</button>

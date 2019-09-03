@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-connection-item',
   templateUrl: './connection-item.component.html',
-  styleUrls: ['./connection-item.component.sass']
+  styleUrls: ['./connection-item.component.scss']
 })
 export class ConnectionItemComponent implements OnInit {
 

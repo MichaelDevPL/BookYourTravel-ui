@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div *ngIf="submitted && !loginForm.valid" class="alert alert-danger col-md-6">
-        <span>Incorrect E-Mail or Password!</span>
+        <span>Incorrect Login or Password!</span>
       </div>
       <div class="col-md-3"></div>
     </div>
@@ -18,11 +18,11 @@
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <div class="form-group has-danger">
-          <label class="sr-only" for="email">E-Mail Address</label>
+          <label class="sr-only">Login</label>
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-            <input type="text" formControlName="email" class="form-control" 
-              placeholder="you@example.com" required autofocus>
+            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user fa-lg"></i></div>
+            <input type="text" formControlName="userName" class="form-control"
+              placeholder="login" required autofocus>
           </div>
         </div>
       </div>

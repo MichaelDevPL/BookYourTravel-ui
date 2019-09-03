@@ -74,10 +74,10 @@
             <input type="date" class="form-control form-control-lg" [(ngModel)]="searchConnection.depart_date" name="depart_date">
           </div>
           <div class="form-group mt-3">
-            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnection.depart_time" name="time">
+            <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnection.depart_time" name="depart_time">
           </div>
           <!--Append-->
-          <button type="submit" (click)="connectionSearching()" class="btn btn-success btn-block text-uppercase">Search</button>
+          <button type="submit" (click)="connectionSearching()" routerLink="/connection" class="btn btn-success btn-block text-uppercase">Search</button>
         </form>
         <!--End ticket form-->
 

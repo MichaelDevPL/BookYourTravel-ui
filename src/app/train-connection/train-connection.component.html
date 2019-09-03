@@ -1,0 +1,7 @@
+<div class="container" style="padding-top: 100px">
+  <div class="row">
+    <div class='col-md-3 col-xs-6' *ngFor="let connection of connections, let i = index" >
+        <app-connection-item [connection]="connection" [counter]="i"></app-connection-item>
+    </div>
+  </div>
+</div>

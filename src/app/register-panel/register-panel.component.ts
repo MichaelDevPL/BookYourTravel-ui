@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { User } from '../shared/model/user.model';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-register-panel',
@@ -14,7 +15,7 @@ export class RegisterPanelComponent implements OnInit {
   public userData: User = new User();
   private submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService:UserService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -39,7 +40,11 @@ export class RegisterPanelComponent implements OnInit {
       console.log(this.passwordMatchValidator())
       this.submitted = true;
       if (!this.registerForm.invalid) {
-        return console.log(this.registerForm.value);
-      }  
-    }
+            this.userData.name = this.f.first_name.value + ' ' + this.f.last_name.value;
+            this.userData.email = this.f.email.value;
+            this.userData.password = this.f.password.value;
+
+            this.userService.createUser(this.userData);
+        }
+      }
 }

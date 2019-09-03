@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BookingTrainService } from '../shared/services/booking-train.service';
-import { SearchConnection } from '../shared/model/search-connection';
+import { ConnectionTrain } from '../shared/model/connection-train.model';
 
 @Component({
   selector: 'app-home-panel',
@@ -10,7 +10,7 @@ import { SearchConnection } from '../shared/model/search-connection';
 })
 export class HomePanelComponent implements OnInit {
 
-  public searchConnection: SearchConnection = new SearchConnection();
+  public searchConnection: ConnectionTrain = new ConnectionTrain();
 
   stations: String[] = [
     'Gdakowo',

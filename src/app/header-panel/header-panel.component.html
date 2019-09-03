@@ -20,10 +20,25 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a>
+        <div *ngIf="isLoggedPanelVisible()">
+          <a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
+        <div *ngIf="isLoggedPanelVisible()">
+          <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
+        </div>
+      </li>
+      <li>
+          <button *ngIf="!isLoggedPanelVisible()" [routerLink]="['/user',loggedUser.id]" class="btn btn-link btn-header text-white">
+            <i class="fa fa-user fa-lg padding-right-14px" ></i> {{loggedUser.name}}
+          </button>
+      </li>
+      <li>
+        <button *ngIf="!isLoggedPanelVisible()" (click)="userService.singOut(loggedUser.id)"
+          class="btn btn-link btn-header text-white">
+          <i class="fa fa-sign-out-alt fa-lg padding-right-14px"></i> Sign out
+        </button>
       </li>
     </ul>
   </div>

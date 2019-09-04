@@ -12,4 +12,5 @@ export class Travel{
     second_class_price: number;
     standing_places: number;
     standing_places_price: number;
+
 }

@@ -77,7 +77,7 @@
             <input type="time" class="form-control form-control-lg" [(ngModel)]="searchConnection.depart_time" name="depart_time">
           </div>
           <!--Append-->
-          <button type="submit" (click)="connectionSearching()" routerLink="/connection" class="btn btn-success btn-block text-uppercase">Search</button>
+          <button type="submit" (click)="connectionSearching()" [disabled]="!searchConnection.from_City || !searchConnection.to_City || !checkDate()" routerLink="/connection" class="btn btn-success btn-block text-uppercase">Search</button>
         </form>
         <!--End ticket form-->
 

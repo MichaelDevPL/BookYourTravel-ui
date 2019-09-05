@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BookingTrainService } from '../shared/services/booking-train.service';
 import { ConnectionTrain } from '../shared/model/connection-train.model';
+import { ObjectUtils } from '../util/object.utils';
 
 @Component({
   selector: 'app-home-panel',
@@ -74,7 +75,16 @@ export class HomePanelComponent implements OnInit {
     return `${now.getFullYear()}-${month}-${day}`;
   }
 
+  checkDate(){
+    if(!(this.searchConnection.depart_date < this.date())){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   connectionSearching(){
+    console.log(this.searchConnection);
     this.bookingTrain.getTrainSchedule(this.searchConnection);
   }
 }

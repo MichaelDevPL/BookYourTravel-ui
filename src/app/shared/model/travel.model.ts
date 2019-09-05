@@ -1,3 +1,5 @@
+import { TicketBuy } from './ticketBuy';
+
 export class Travel{
     id: number;
     from_City: String;

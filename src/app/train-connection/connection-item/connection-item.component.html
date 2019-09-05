@@ -11,12 +11,16 @@
     <label for="inputState">Type Seat</label>
     <select id="inputState" class="form-control" (change)="selectChangeHandler($event)">
       <option>Please Select..</option>
-      <option value="Standing Places {{connection.standing_places_price}} zł">Standing Places {{connection.standing_places_price}} zł</option>
-      <option value="Second Class {{connection.second_class_price}} zł">Second Class {{connection.second_class_price}} zł</option>
-      <option value="First Class {{connection.first_class_price}} zł">First Class {{connection.first_class_price}} zł</option>
+      <option value="Standing Places {{connection.standing_places_price}} zł">Standing Places
+        {{connection.standing_places_price}} zł</option>
+      <option value="Second Class {{connection.second_class_price}} zł">Second Class {{connection.second_class_price}}
+        zł</option>
+      <option value="First Class {{connection.first_class_price}} zł">First Class {{connection.first_class_price}} zł
+      </option>
     </select>
   </div>
 
-  <button type="submit" (click)="submit()" class="btn btn-success btn-block text-uppercase">Submit</button>
-
+  <div style="padding-bottom: 15px;">
+    <button type="submit" (click)="submit()" class="btn btn-success btn-block text-uppercase">Submit</button>
+  </div>
 </div>

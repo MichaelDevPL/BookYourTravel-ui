@@ -1,0 +1,7 @@
+<div class="container" style="padding-top: 100px">
+  <div class="row">
+    <div class='col-md-3 col-xs-6' *ngFor="let tickets of ticketsUser, let i = index">
+        <app-user-ticket-item [ticket]="tickets" [counter]="i" (delete)="onDelete($event)"></app-user-ticket-item>
+    </div>
+  </div>
+</div>

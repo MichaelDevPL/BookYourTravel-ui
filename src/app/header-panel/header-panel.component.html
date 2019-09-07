@@ -30,7 +30,7 @@
         </div>
       </li>
       <li>
-          <button *ngIf="!isLoggedPanelVisible()" [routerLink]="['/user',loggedUser.id]" class="btn btn-link btn-header text-white">
+          <button *ngIf="!isLoggedPanelVisible()" routerLink="/boughtTicket" class="btn btn-link btn-header text-white">
             <i class="fa fa-user fa-lg padding-right-14px" ></i> {{loggedUser.name}}
           </button>
       </li>

@@ -1,0 +1,24 @@
+<div class="container">
+  <hr>
+  <P>Ticket buy in {{ticket.date_of_purchase}}</P>
+  <hr>
+  <div class="timeDiv fa fa-clock"> From City: {{ticket.travel[0].from_City}}</div>
+  <div class="cityDiv fa fa-city"> To City: {{ticket.travel[0].to_City}}</div>
+  <hr>
+  <p>Depart</p>
+  <div class="timeDiv fa fa-clock"> Time: {{ticket.travel[0].depart_time}}</div>
+  <div class="timeDiv fa fa-calendar"> Day: {{ticket.travel[0].depart_date}}</div>
+  <hr>
+  <p>Arrival</p>
+  <div class="timeDiv fa fa-clock"> Time: {{ticket.travel[0].arrival_time}}</div>
+  <div class="timeDiv fa fa-calendar"> Day: {{ticket.travel[0].arrival_date}}</div>
+  <hr>
+  <p>Seat type and cost</p>
+  <div class="timeDiv">{{ticket.typeSeatPlace}}</div>
+  <hr>
+
+  <div style="padding-bottom: 15px;">
+    <button type="submit"  (click)="cancel()" class="btn btn-success btn-block text-uppercase">Cancel</button>
+  </div>
+  <hr>
+</div>

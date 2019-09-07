@@ -1,0 +1,29 @@
+.container{
+    background-color: #06aed5;
+    font-weight: 900;
+    border-radius: 5%;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: transparent 0px 0px 0px, rgba(0,0,0,1) 0px 0px 0px;
+    color: white;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    .timeDiv{
+        padding-top: 10px;
+        align-items: center !important;
+    }
+    .cityDiv{
+        padding-top: 10px;
+        align-items: center !important;
+    }
+
+    p{
+        font-size: 25px;
+        text-align: center !important;
+    }
+
+    button{
+        border-radius: 10%;
+    }
+}

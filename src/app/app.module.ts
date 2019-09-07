@@ -20,6 +20,8 @@ import { AuthDataService } from './shared/services/auth-data.service';
 import { SharedService } from './shared/services/shared.service';
 import { TrainConnectionComponent } from './train-connection/train-connection.component';
 import { ConnectionItemComponent } from './train-connection/connection-item/connection-item.component';
+import { UserTicketBuyViewComponent } from './user-ticked-buy-view/user-ticket-buy-view.component';
+import { UserTicketItemComponent } from './user-ticked-buy-view/user-ticket-item/user-ticket-item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ConnectionItemComponent } from './train-connection/connection-item/conn
     RegisterPanelComponent,
     HomePanelComponent,
     TrainConnectionComponent,
-    ConnectionItemComponent
+    ConnectionItemComponent,
+    UserTicketBuyViewComponent,
+    UserTicketItemComponent
   ],
   imports: [
     BrowserModule,

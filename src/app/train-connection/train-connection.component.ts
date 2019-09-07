@@ -4,7 +4,6 @@ import { BookingTrainService } from '../shared/services/booking-train.service';
 import { SharedService } from '../shared/services/shared.service';
 import { Router } from '@angular/router';
 import { ObjectUtils } from '../util/object.utils';
-import { BasicUser } from '../shared/model/basic-user.model';
 
 @Component({
   selector: 'app-train-connection',
